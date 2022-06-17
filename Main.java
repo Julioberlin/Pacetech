@@ -1,59 +1,25 @@
-package Atividade6;
-
-import java.util.Scanner;
+package Atividade7;
 
 public class Main {
 
-    @SuppressWarnings("empty-statement")
     public static void main(String[] args) {
-        Scanner leitor = new Scanner(System.in);
 
-        int opcao;
-        float celsius, fahrenheit, cotacaoDolar, valoremDolar,
-                valoremReal, conversaoRD, conversaoDR;
-        do {
-            System.out.println("Digite 1 para converter Celsius para Fahrenheit");
-            System.out.println("Digite 2 para converter de Fahrenheit para Celsius");
-            System.out.println("Digite 3 para converter Reais para Dolar");
-            System.out.println("Digite 4 para converter Dolar para Reais");
-            System.out.println("Digite 5 para Sair");
+        Empregado emp1 = new Empregado("Arthur", "Berlin", 2500.0f);
+        
+        System.out.println("Primeiro Nome: " + emp1.getPrimeiroNome());
+        System.out.println("Sobre Nome: " + emp1.getSobreNome());
+        System.out.println("Salario Mensal: " + emp1.getSalarioMensal());
+        System.out.println("Salario Anual: " + emp1.getSalarioAnual());
+        System.out.println("Salario Reajustado: " + String.format("%.2f", 
+                emp1.getAumentarSalario()));
+                             
+        Empregado emp2 = new Empregado("Eduardo", "Freitag", 4300.0f);
 
-            opcao = leitor.nextInt();
-            switch (opcao) {
-                case 1 -> {
-                    System.out.println("Por favor informe a temperatura em ºCelsius: ");
-                    celsius = leitor.nextFloat();
-                    fahrenheit = (celsius * (9 / 5)) + 32;
-                    System.out.println("Graus Fahrenheit: " + fahrenheit);
-                }
-                case 2 -> {
-                    System.out.println("Por favor informe a temperatura em ºFahrenheit: ");
-                    fahrenheit = leitor.nextFloat();
-                    celsius = (fahrenheit - 32) / (9 / 5);
-                    System.out.println("Graus Celsius" + celsius);
-                }
-                case 3 -> {
-                    System.out.println("Por favor informe a cotação do dólar atual U$: ");
-                    cotacaoDolar = leitor.nextFloat();
-                    System.out.println("Por favor informe valor da compra em R$: ");
-                    valoremReal = leitor.nextFloat();
-                    conversaoRD = (valoremReal / cotacaoDolar);
-                    System.out.println("Sua compra custará: U$ " + conversaoRD);
-                }
-                case 4 -> {
-                    System.out.println("Por favor informe a cotação do dólar atual U$: ");
-                    cotacaoDolar = leitor.nextFloat();
-                    System.out.println("Por favor informe valor da compra em U$: ");
-                    valoremDolar = leitor.nextFloat();
-                    conversaoDR = (cotacaoDolar * valoremDolar);
-                    System.out.println("Sua compra custará: R$ " + conversaoDR);
-                }
-                case 5 -> {
-                    System.out.println("Usuário quer sair");
-                }
-                default ->
-                    System.out.println("Opção Inválida, tente novamente");
-            }
-        } while (opcao != 5);
+        System.out.println("Primeiro Nome: " + emp2.getPrimeiroNome());
+        System.out.println("Sobre Nome: " + emp2.getSobreNome());
+        System.out.println("Salario Mensal: " + emp2.getSalarioMensal());
+        System.out.println("Salario Anual: " + emp2.getSalarioAnual());
+        System.out.println("Salario Reajustado: " + String.format("%.2f", 
+                emp2.getAumentarSalario()));
     }
 }
